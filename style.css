@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    background-color: #fce4ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(#f8bbd0 15%, transparent 16%), 
+        radial-gradient(#f8bbd0 15%, transparent 16%);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+}
+
+.calculator-container {
+    position: relative;
+}
+
+.calculator-container::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+
+.calculator {
+    background-color: #f8bbd0;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 320px;
+    padding: 20px;
+    border: 3px solid #ffffff;
+}
+
+.display {
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    text-align: right;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid #f48fb1;
+}
+
+.previous-operand {
+    color: #9e9e9e;
+    font-size: 1.2rem;
+    min-height: 24px;
+}
+
+.current-operand {
+    color: #424242;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
+}
+
+button {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    height: 60px;
+    outline: none;
+    transition: all 0.2s;
+    background-color: #ffffff;
+    color: #424242;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.operator {
+    background-color: #f48fb1;
+    color: white;
+}
+
+.equals {
+    background-color: #ec407a;
+    color: white;
+    grid-column: span 2;
+    border-radius: 30px;
+}
+
+.clear, .delete {
+    background-color: #ffcdd2;
+    color: #e57373;
+}
+
+.zero {
+    grid-column: span 2;
+    border-radius: 30px;
+}
+
+/* かわいい装飾要素 */
+.calculator::before {
+    content: "♡";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    color: #f48fb1;
+}
+
+.calculator::after {
+    content: "♡";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #f48fb1;
+}
+
+/* ボタンプレスアニメーション */
+.pressed {
+    transform: scale(0.95) !important;
+    opacity: 0.8;
+}
